@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friends Gallery</title><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    min-height:100vh;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+button{
+    background:#00c853;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#00e676;
+}
+
+.links{
+    display:none;
+    margin-top:15px;
+}
+
+.links a{
+    display:block;
+    background:white;
+    color:#333;
+    text-decoration:none;
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.links a:hover{
+    background:#f1f1f1;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    opacity:0.8;
+}
+</style></head>
+<body><header>
+    <h1>📸 Friends Gallery 🎥</h1>
+    <p>Images & Videos Collection</p>
+</header><div class="container"><!-- Bihar Section -->
+<div class="card">
+    <h2>🌾 Bihar</h2>
+    <button onclick="toggleLinks('biharLinks')">Open Bihar</button>
+
+    <div class="links" id="biharLinks">
+        <a href="YOUR_BIHAR_IMAGES_LINK_HERE" target="_blank">📷 Bihar Images</a>
+        <a href="YOUR_BIHAR_VIDEOS_LINK_HERE" target="_blank">🎥 Bihar Videos</a>
+    </div>
+</div>
+
+<!-- Bengal Section -->
+<div class="card">
+    <h2>🐯 Bengal</h2>
+    <button onclick="toggleLinks('bengalLinks')">Open Bengal</button>
+
+    <div class="links" id="bengalLinks">
+        <a href="YOUR_BENGAL_IMAGES_LINK_HERE" target="_blank">📷 Bengal Images</a>
+        <a href="YOUR_BENGAL_VIDEOS_LINK_HERE" target="_blank">🎥 Bengal Videos</a>
+    </div>
+</div>
+
+<!-- Private Section -->
+<div class="card">
+    <h2>🔒 Private Section</h2>
+    <button onclick="openPrivate()">See Private Images & Videos</button>
+
+    <div class="links" id="privateLinks">
+        <a href="YOUR_PRIVATE_IMAGES_LINK_HERE" target="_blank">📷 Private Images</a>
+        <a href="YOUR_PRIVATE_VIDEOS_LINK_HERE" target="_blank">🎥 Private Videos</a>
+    </div>
+</div>
+
+</div><footer>
+    Friends Gallery © 2026
+</footer><script>
+function toggleLinks(id){
+    const links = document.getElementById(id);
+
+    if(links.style.display === "block"){
+        links.style.display = "none";
+    }else{
+        links.style.display = "block";
+    }
+}
+
+function openPrivate(){
+    const password = prompt("Enter Password");
+
+    if(password === "Friend:12345"){
+        document.getElementById("privateLinks").style.display = "block";
+        alert("Access Granted!");
+    }else{
+        alert("Wrong Password!");
+    }
+}
+</script></body>
+</html>
