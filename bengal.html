@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bengal Gallery</title><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#7c2d12,#0f172a);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:white;
+    min-height:100vh;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    text-shadow:0 0 20px orange;
+}
+
+header p{
+    color:#d1d5db;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.section{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 0 20px rgba(255,165,0,.25);
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border-radius:15px;
+    padding:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,#f97316,#ea580c);
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px orange;
+}
+
+#privateContent{
+    display:none;
+    margin-top:20px;
+}
+
+.back{
+    text-align:center;
+    margin-top:25px;
+}
+
+.back a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#d1d5db;
+}
+</style></head>
+<body><header>
+    <h1>🐯 Bengal Gallery</h1>
+    <p>Photos, Videos & Special Memories</p>
+</header><div class="container"><div class="section">
+    <h2>📷 Bengal Images</h2>
+
+    <div class="card">
+        <p>Click below to view all Bengal images.</p>
+
+        <a href="YOUR_BENGAL_IMAGES_LINK"
+           target="_blank"
+           class="btn">
+           Open Images
+        </a>
+    </div>
+</div>
+
+<div class="section">
+    <h2>🎥 Bengal Videos</h2>
+
+    <div class="card">
+        <p>Click below to view all Bengal videos.</p>
+
+        <a href="YOUR_BENGAL_VIDEOS_LINK"
+           target="_blank"
+           class="btn">
+           Open Videos
+        </a>
+    </div>
+</div>
+
+<div class="section">
+    <h2>🔒 Private Bengal Content</h2>
+
+    <div class="card">
+        <p>Private images and videos for friends only.</p>
+
+        <button class="btn" onclick="checkPassword()">
+            See Private Content
+        </button>
+
+        <div id="privateContent">
+
+            <a href="YOUR_PRIVATE_BENGAL_IMAGES_LINK"
+               target="_blank"
+               class="btn">
+               📷 Private Images
+            </a>
+
+            <br><br>
+
+            <a href="YOUR_PRIVATE_BENGAL_VIDEOS_LINK"
+               target="_blank"
+               class="btn">
+               🎥 Private Videos
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<div class="back">
+    <a href="index.html">⬅ Back To Home</a>
+</div>
+
+</div><footer>
+⭐ Bengal Memories Collection ⭐
+</footer><script>
+function checkPassword(){
+
+    let pass = prompt("Enter Password");
+
+    if(pass && pass.trim() === "Friend:12345"){
+        document.getElementById("privateContent").style.display = "block";
+        alert("Access Granted!");
+    }else{
+        alert("Wrong Password!");
+    }
+
+}
+</script></body>
+</html>
