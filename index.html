@@ -7,141 +7,165 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#1e3c72,#2a5298);
     min-height:100vh;
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#312e81,#0f172a);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
     color:white;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+    50%{
+        opacity:.2;
+    }
 }
 
 header{
     text-align:center;
-    padding:30px;
+    padding:50px 20px;
 }
 
 header h1{
-    font-size:2.5rem;
+    font-size:3rem;
+    text-shadow:0 0 20px cyan;
+}
+
+header p{
+    margin-top:10px;
+    color:#d1d5db;
 }
 
 .container{
-    max-width:900px;
+    max-width:1200px;
     margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
     padding:20px;
 }
 
 .card{
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(10px);
-    border-radius:15px;
+    width:350px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(0,255,255,.2);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-15px) scale(1.03);
+    box-shadow:0 0 40px cyan;
+}
+
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.card-content{
     padding:20px;
-    margin-bottom:20px;
     text-align:center;
 }
 
 .card h2{
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
-button{
-    background:#00c853;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+.card p{
+    color:#d1d5db;
+    margin-bottom:20px;
 }
 
-button:hover{
-    background:#00e676;
-}
-
-.links{
-    display:none;
-    margin-top:15px;
-}
-
-.links a{
-    display:block;
-    background:white;
-    color:#333;
+.btn{
+    display:inline-block;
     text-decoration:none;
-    margin:10px 0;
-    padding:12px;
-    border-radius:8px;
+    color:white;
+    background:linear-gradient(45deg,#06b6d4,#3b82f6);
+    padding:12px 30px;
+    border-radius:30px;
     font-weight:bold;
+    transition:.3s;
 }
 
-.links a:hover{
-    background:#f1f1f1;
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px cyan;
 }
 
 footer{
     text-align:center;
-    padding:20px;
-    opacity:0.8;
+    padding:40px;
+    color:#d1d5db;
 }
 </style></head>
-<body><header>
+<body><div class="stars" id="stars"></div><header>
     <h1>📸 Friends Gallery 🎥</h1>
-    <p>Images & Videos Collection</p>
-</header><div class="container"><!-- Bihar Section -->
-<div class="card">
-    <h2>🌾 Bihar</h2>
-    <button onclick="toggleLinks('biharLinks')">Open Bihar</button>
-
-    <div class="links" id="biharLinks">
-        <a href="YOUR_BIHAR_IMAGES_LINK_HERE" target="_blank">📷 Bihar Images</a>
-        <a href="YOUR_BIHAR_VIDEOS_LINK_HERE" target="_blank">🎥 Bihar Videos</a>
+    <p>Memories From Bihar & Bengal</p>
+</header><div class="container"><div class="card">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800" alt="Bihar">
+    <div class="card-content">
+        <h2>🌾 Bihar</h2>
+        <p>Photos, videos and special memories from Bihar.</p>
+        <a href="bihar.html" class="btn">Open Bihar</a>
     </div>
 </div>
 
-<!-- Bengal Section -->
 <div class="card">
-    <h2>🐯 Bengal</h2>
-    <button onclick="toggleLinks('bengalLinks')">Open Bengal</button>
-
-    <div class="links" id="bengalLinks">
-        <a href="YOUR_BENGAL_IMAGES_LINK_HERE" target="_blank">📷 Bengal Images</a>
-        <a href="YOUR_BENGAL_VIDEOS_LINK_HERE" target="_blank">🎥 Bengal Videos</a>
-    </div>
-</div>
-
-<!-- Private Section -->
-<div class="card">
-    <h2>🔒 Private Section</h2>
-    <button onclick="openPrivate()">See Private Images & Videos</button>
-
-    <div class="links" id="privateLinks">
-        <a href="YOUR_PRIVATE_IMAGES_LINK_HERE" target="_blank">📷 Private Images</a>
-        <a href="YOUR_PRIVATE_VIDEOS_LINK_HERE" target="_blank">🎥 Private Videos</a>
+    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800" alt="Bengal">
+    <div class="card-content">
+        <h2>🐯 Bengal</h2>
+        <p>Photos, videos and special memories from Bengal.</p>
+        <a href="bengal.html" class="btn">Open Bengal</a>
     </div>
 </div>
 
 </div><footer>
-    Friends Gallery © 2026
+    ⭐ Friends Gallery • Made With Friendship ⭐
 </footer><script>
-function toggleLinks(id){
-    const links = document.getElementById(id);
+const starsContainer = document.getElementById("stars");
 
-    if(links.style.display === "block"){
-        links.style.display = "none";
-    }else{
-        links.style.display = "block";
-    }
-}
+for(let i=0;i<100;i++){
+    const star=document.createElement("div");
+    star.classList.add("star");
 
-function openPrivate(){
-    const password = prompt("Enter Password");
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
 
-    if(password === "Friend:12345"){
-        document.getElementById("privateLinks").style.display = "block";
-        alert("Access Granted!");
-    }else{
-        alert("Wrong Password!");
-    }
+    star.style.animationDelay=Math.random()*3+"s";
+
+    starsContainer.appendChild(star);
 }
 </script></body>
 </html>
