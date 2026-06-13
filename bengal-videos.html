@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bengal Videos</title><style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#7c2d12,#0f172a);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:white;
+    min-height:100vh;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    text-shadow:0 0 20px orange;
+}
+
+header p{
+    color:#d1d5db;
+}
+
+.video-grid{
+    max-width:1300px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.video-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 0 20px rgba(255,165,0,.2);
+}
+
+.video-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 30px orange;
+}
+
+.video-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.video-content{
+    padding:15px;
+    text-align:center;
+}
+
+.watch-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    border-radius:25px;
+    background:#ea580c;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back{
+    text-align:center;
+    margin:30px;
+}
+
+.back a{
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,#f97316,#ea580c);
+    padding:12px 25px;
+    border-radius:30px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#d1d5db;
+}
+</style></head>
+<body><header>
+    <h1>🎥 Bengal Videos</h1>
+    <p>Videos & Memories From Friends</p>
+</header><div class="video-grid"><div class="video-card">
+    <img src="THUMBNAIL_LINK_1">
+    <div class="video-content">
+        <h3>Video 1</h3>
+        <a href="VIDEO_LINK_1" target="_blank" class="watch-btn">
+            ▶ Watch Video
+        </a>
+    </div>
+</div>
+
+<div class="video-card">
+    <img src="THUMBNAIL_LINK_2">
+    <div class="video-content">
+        <h3>Video 2</h3>
+        <a href="VIDEO_LINK_2" target="_blank" class="watch-btn">
+            ▶ Watch Video
+        </a>
+    </div>
+</div>
+
+<div class="video-card">
+    <img src="THUMBNAIL_LINK_3">
+    <div class="video-content">
+        <h3>Video 3</h3>
+        <a href="VIDEO_LINK_3" target="_blank" class="watch-btn">
+            ▶ Watch Video
+        </a>
+    </div>
+</div>
+
+</div><div class="back">
+    <a href="bengal.html">⬅ Back To Bengal</a>
+</div><footer>
+⭐ Bengal Video Collection ⭐
+</footer></body>
+</html>
